@@ -8,6 +8,7 @@ process sayHello {
     val x from cheers
   script:
     """
-    echo '$x world! from hostname'
+    echo '$x world! from '
+    hostname
     """
 }
