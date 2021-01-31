@@ -10,5 +10,6 @@ process sayHello {
     """
     echo '$x world! from '
     hostname
+    echo $PWD
     """
 }
