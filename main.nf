@@ -1,9 +1,9 @@
 #!/usr/bin/env nextflow
 
-// params.outDir = '/home/_workflows/test7'
+params.outDir = process.outDir
 
 process foo {
-  publishDir "$process.outDir" 
+  publishDir "$params.outDir" 
 
   output: 
   file 'hello'
