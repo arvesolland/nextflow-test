@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-params.outDir = '/home/_workflows/test7'
+// params.outDir = '/home/_workflows/test7'
 
 process foo {
   publishDir "$params.outDir" 
