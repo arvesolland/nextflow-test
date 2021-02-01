@@ -1,20 +1,14 @@
 #!/usr/bin/env nextflow
 
-cheers = Channel.from 'Bonjour', 'Ciao', 'Hello', 'Hola'
+params.outDir = '/home/_workflows/test7'
 
-process sayHello {
-    publishDir '/home/_workflows/test2'
-    echo true
-    input: 
-        val x from cheers
-    script:
-        """
-        echo '$x world! from '
-        hostname
-        echo $PWD
-        echo "Project : $workflow.projectDir"
-        echo "Git info: $workflow.repository - $workflow.revision [$workflow.commitId]"
-        echo "Cmd line: $workflow.commandLine"
-        echo "Manifest's pipeline version: $workflow.manifest.version"
-        """
+process foo {
+  publishDir "$params.outDir" 
+
+  output: 
+  file 'hello'
+
+  '''
+  echo Hello > hello
+  '''
 }
